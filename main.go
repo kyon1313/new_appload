@@ -58,8 +58,10 @@ func main() {
 
 	// Or extend your config for customization
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "https://gofiber.io, https://gofiber.net",
-		AllowHeaders: "Origin, Content-Type, Accept",
+		AllowHeaders:     "Origin, Content-Type, Accept, Content-Length, Accept-Language, Accept-Encoding, Connection, Access-Control-Allow-Origin",
+		AllowOrigins:     "*",
+		AllowCredentials: true,
+		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 	app.Use(logger.New())
 
