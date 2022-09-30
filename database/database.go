@@ -11,7 +11,7 @@ import (
 var DB *gorm.DB
 var err error
 
-var DSN = "host=localhost user=postgres password=sparkman13 dbname=testing_db port=5432 sslmode=disable"
+var DSN = "host=ec2-18-208-55-135.compute-1.amazonaws.com user=rtdxajczuwsukk password=ff9ab4e5d2ec82a0b411c7fc8d51d0816711adaf25d76ce56e78710be8682194 dbname=df6tcrni6lh2bk port=5432"
 
 func Migration() {
 	DB, err = gorm.Open(postgres.Open(DSN), &gorm.Config{})
