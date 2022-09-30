@@ -19,6 +19,7 @@ func Routes(app *fiber.App) {
 	app.Put("/user/:id", route.UpdateUser)
 	//login
 	app.Post("login", route.Log)
+	app.Post("/loginhayop", route.Log)
 	//Preference
 	app.Post("/pref", route.AddPref)
 	app.Get("/pref", route.GetPrefs)
