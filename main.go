@@ -53,8 +53,10 @@ func main() {
 	Routes(app)
 	database.Migration()
 	app.Use(cors.New(cors.Config{
-		AllowOrigins: "*",                                           // means all user can access the API or you can just specify the user that can use the system (example: facebook.com) only
-		AllowHeaders: "Origin, Content-Type, Accept, Authorization", //header that we only accept
+		AllowHeaders:     "Origin, Content-Type, Accept, Content-Length, Accept-Language, Accept-Encoding, Connection, Access-Control-Allow-Origin",
+		AllowOrigins:     "*",
+		AllowCredentials: true,
+		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 	app.Use(logger.New())
 
