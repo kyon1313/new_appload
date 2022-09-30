@@ -50,7 +50,7 @@ func Routes(app *fiber.App) {
 func main() {
 
 	app := fiber.New()
-	Routes(app)
+
 	database.Migration()
 
 	// Default config
@@ -64,6 +64,7 @@ func main() {
 		AllowMethods:     "GET,POST,HEAD,PUT,DELETE,PATCH,OPTIONS",
 	}))
 	app.Use(logger.New())
+	Routes(app)
 
 	port := os.Getenv("PORT")
 	log.Fatal(app.Listen(":" + port))
